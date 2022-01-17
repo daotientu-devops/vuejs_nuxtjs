@@ -13,6 +13,12 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  /**
+   * Global CSS
+   */
+  css: [
+    '@/assets/css/main.css'
+  ],
   /*
   ** Customize the progress bar color
   */
@@ -21,6 +27,12 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {}
+      }
+    },
     /*
     ** Run ESLint on save
     */
@@ -34,6 +46,9 @@ module.exports = {
         })
       }
     }
-  }
-}
+  },
+  buildModules: [
+    '@nuxt/postcss8',
+  ]
+};
 
